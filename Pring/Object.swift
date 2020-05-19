@@ -762,6 +762,10 @@ public struct DocumentError: Error {
     }
     let kind: ErrorKind
     let description: String
+    
+    public var localizedDescription: String {
+        return description
+    }
 }
 
 extension Sequence where Iterator.Element: Object {
