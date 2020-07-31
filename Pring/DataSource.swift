@@ -422,7 +422,9 @@ public final class DataSource<T: Document>: ExpressibleByArrayLiteral {
                 block?(true)
                 return
             }
-            self.query = self.query.start(afterDocument: lastSnapshot)
+            if !lastSnapshot.metadata.hasPendingWrites {
+                self.query = self.query.start(afterDocument: lastSnapshot)
+            }
             block?(false)
         })
         return self
