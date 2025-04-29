@@ -70,3 +70,9 @@ fastlane/test_output
 
 # Google Firebase Plist
 PringTests/GoogleService-Info.plist
+
+
+# Swift Package Manager
+.swiftpm/
+.build/
+Package.resolved
